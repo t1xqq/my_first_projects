@@ -1,0 +1,170 @@
+/* =========================================
+   Part 2: Working with Selectors (Page 4-5)
+   ========================================= */
+
+/* Tag selector */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1 {
+    color: darkblue;
+}
+
+/* Class selector */
+.main-header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-bottom: 2px solid #ccc;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #666;
+}
+
+/* ID selector */
+#site-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   Task 2.2: Combined Selectors (Page 5)
+   ========================================= */
+
+/* Child selector */
+.content > article {
+    background-color: white;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+/* Descendant selector */
+.post p {
+    margin-bottom: 10px;
+}
+
+/* Adjacent sibling selector */
+h2 + p {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Attribute selector */
+.card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* =========================================
+   Part 3: Cascade and Specificity (Page 6-7)
+   ========================================= */
+
+/* --- Task 3.1: Cascade Demonstration --- */
+
+/* Base style for all paragraphs */
+p {
+    color: black;
+    font-size: 16px;
+}
+
+/* More specific selector */
+.post p {
+    color: darkgreen;
+}
+
+/* Even more specific */
+.featured-post p {
+    color: darkred;
+}
+
+/* The most specific */
+.featured-post .intro {
+    color: purple;
+    font-size: 18px;
+}
+
+/* --- Task 3.2: Specificity Study --- */
+
+/* Specificity: 0,1,0 */
+.important {
+    color: red;
+    font-weight: bold;
+}
+
+/* Specificity: 0,1,1 */
+li.important {
+    color: darkred;
+    text-decoration: underline;
+}
+
+/* Specificity: 0,0,2 */
+ul li {
+    color: blue;
+}
+
+/* !important overrides everything else */
+.important {
+    color: orange !important;
+}
+
+/* =========================================
+   Part 4: Inheritance and Pseudo-classes (Page 8-9)
+   ========================================= */
+
+/* --- Task 4.1: Inherited Properties --- */
+
+/* Inherited by child elements */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+/* Not inherited (must explicitly specify inheritance) */
+.card {
+    border: 2px solid #3498db;
+    padding: inherit; /* Inherits from parent */
+}
+
+/* Font inheritance */
+.examples {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* --- Task 4.2: Pseudo-classes and Pseudo-elements --- */
+
+/* Pseudo-classes */
+li:hover {
+    background-color: yellow;
+    cursor: pointer;
+}
+
+li:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.main-header:hover {
+    background-color: #e9e9e9;
+    transition: background-color 0.3s;
+}
+
+/* Pseudo-elements */
+p::first-line {
+    font-weight: bold;
+}
+
+.post h2::after {
+    content: " ★";
+    color: gold;
+}
+
+.card::before {
+    content: "→ ";
+    color: green;
+}
