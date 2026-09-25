@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<<<<<<< HEAD
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid Layout</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grid-container">
+    <header class="header">
+      <h1>CSS Grid в действии</h1>
+    </header>
+
+    <nav class="navigation">
+      <h2>Навигация</h2>
+      <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Услуги</a></li>
+        <li><a href="#">Портфолио</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <main class="main-content">
+      <article class="featured">
+        <h2>Основной контент</h2>
+        <p>Это главная статья на странице</p>
+      </article>
+
+      <section class="gallery">
+        <div class="gallery-item">Изображение 1</div>
+        <div class="gallery-item">Изображение 2</div>
+        <div class="gallery-item">Изображение 3</div>
+        <div class="gallery-item">Изображение 4</div>
+        <div class="gallery-item">Изображение 5</div>
+        <div class="gallery-item">Изображение 6</div>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <h2>Боковая панель</h2>
+      <p>Дополнительная информация и виджеты</p>
+    </aside>
+
+    <footer class="footer">
+      <div class="footer-section">Контакты</div>
+      <div class="footer-section">Соцсети</div>
+      <div class="footer-section">Партнеры</div>
+      <div class="footer-section">Подписка</div>
+    </footer>
+  </div>
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кулинарный блог — Рецепты со всего мира</title>
+</head>
+<body>
+
+    <!-- ШАПКА САЙТА -->
+    <header>
+        <h1>Кулинарные путешествия</h1>
+        <p>Простые и вкусные рецепты для каждого дня</p>
+    </header>
+
+    <!-- НАВИГАЦИЯ -->
+    <nav>
+        <ul>
+            <li><a href="#italy">Италия</a></li>
+            <li><a href="#japan">Япония</a></li>
+            <li><a href="#mexico">Мексика</a></li>
+            <li><a href="#about">О блоге</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <main>
+
+        <!-- Статья 1: Италия (с микроразметкой Recipe) -->
+        <article id="italy" itemscope itemtype="https://schema.org/Recipe">
+            <header>
+                <h2 itemprop="name">Паста карбонара по-итальянски</h2>
+                <time itemprop="datePublished" datetime="2024-04-10">10 апреля 2024</time>
+            </header>
+
+            <section>
+                <h3>История блюда</h3>
+                <p itemprop="description">
+                    Карбонара появилась в Риме в середине XX века и быстро стала
+                    символом итальянской кухни. Главный секрет — свежие яйца
+                    и качественный сыр пекорино.
+                </p>
+                <figure>
+                    <img src="https://via.placeholder.com/600x400"
+                         alt="Тарелка пасты карбонара"
+                         itemprop="image">
+                    <figcaption>Классическая карбонара с гуанчале</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <h3>Ингредиенты</h3>
+                <ul>
+                    <li itemprop="recipeIngredient">Спагетти — 200 г</li>
+                    <li itemprop="recipeIngredient">Гуанчале — 100 г</li>
+                    <li itemprop="recipeIngredient">Яйца — 2 шт.</li>
+                    <li itemprop="recipeIngredient">Пекорино романо — 50 г</li>
+                    <li itemprop="recipeIngredient">Чёрный перец — по вкусу</li>
+                </ul>
+            </section>
+
+            <footer>
+                <p>Автор: <span itemprop="author">Мария Соколова</span></p>
+                <address>Email: maria@example.com</address>
+            </footer>
+        </article>
+
+        <!-- Статья 2: Япония (с микроразметкой Article) -->
+        <article id="japan" itemscope itemtype="https://schema.org/Article">
+            <header>
+                <h2 itemprop="headline">Суши: традиции и современность</h2>
+                <time itemprop="datePublished" datetime="2024-04-15">15 апреля 2024</time>
+            </header>
+            <p itemprop="articleBody">
+                Японская кухня учит простоте и уважению к продукту. Суши —
+                это не просто еда, а целая философия.
+            </p>
+            <details>
+                <summary>Читать далее о Токио</summary>
+                <p>В Токио более 200 ресторанов со звёздами Мишлен — больше,
+                   чем в любом другом городе мира.</p>
+            </details>
+            <footer>
+                <p>Автор: <span itemprop="author">Иван Петров</span></p>
+            </footer>
+        </article>
+
+        <!-- Статья 3: Мексика (с микроразметкой Recipe) -->
+        <article id="mexico" itemscope itemtype="https://schema.org/Recipe">
+            <header>
+                <h2 itemprop="name">Мексиканские тако с говядиной</h2>
+                <time itemprop="datePublished" datetime="2024-04-20">20 апреля 2024</time>
+            </header>
+            <p itemprop="description">
+                Настоящие тако — это мягкая кукурузная тортилья, сочное мясо,
+                лук, кинза и немного лайма.
+            </p>
+            <section>
+                <h3>Ингредиенты</h3>
+                <ul>
+                    <li itemprop="recipeIngredient">Тортильи — 6 шт.</li>
+                    <li itemprop="recipeIngredient">Говядина — 400 г</li>
+                    <li itemprop="recipeIngredient">Лук — 1 шт.</li>
+                    <li itemprop="recipeIngredient">Кинза — пучок</li>
+                    <li itemprop="recipeIngredient">Лайм — 1 шт.</li>
+                </ul>
+            </section>
+            <footer>
+                <p>Автор: <span itemprop="author">Анна Орлова</span></p>
+            </footer>
+        </article>
+
+        <!-- Раздел «О блоге» -->
+        <section id="about">
+            <h2>О нашем блоге</h2>
+            <p>Мы делимся проверенными рецептами и историями о еде
+               из разных уголков планеты.</p>
+        </section>
+
+        <!-- Форма подписки -->
+        <section id="subscribe">
+            <h2>Подписка на рассылку</h2>
+            <form action="#" method="post">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="submit">Подписаться</button>
+            </form>
+        </section>
+
+        <!-- Таблица расписания -->
+        <section id="schedule">
+            <h2>Расписание кулинарных мастер-классов</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Тема</th>
+                        <th>Ведущий</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>15.05.2024</td>
+                        <td>Итальянская паста</td>
+                        <td>Мария Соколова</td>
+                    </tr>
+                    <tr>
+                        <td>22.05.2024</td>
+                        <td>Японские суши</td>
+                        <td>Иван Петров</td>
+                    </tr>
+                    <tr>
+                        <td>29.05.2024</td>
+                        <td>Мексиканские тако</td>
+                        <td>Анна Орлова</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- БОКОВАЯ ПАНЕЛЬ (с микроразметкой) -->
+    <aside itemscope itemtype="https://schema.org/WPSideBar">
+        <h3 itemprop="name">Популярные кухни</h3>
+        <ul>
+            <li><a href="#italy">Итальянская</a></li>
+            <li><a href="#japan">Японская</a></li>
+            <li><a href="#mexico">Мексиканская</a></li>
+        </ul>
+    </aside>
+
+    <!-- ПОДВАЛ САЙТА -->
+    <footer itemscope itemtype="https://schema.org/WPFooter">
+        <p>&copy; 2024 Кулинарные путешествия. Все права защищены.</p>
+        <nav>
+            <a href="#privacy">Политика конфиденциальности</a> |
+            <a href="#terms">Условия использования</a>
+        </nav>
+    </footer>
+
+>>>>>>> a0c98ae0292708ac536ae6fade29e686f2079320
+</body>
+</html>
