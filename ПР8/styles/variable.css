@@ -1,0 +1,33 @@
+:root {
+    /* Цвета Positivus */
+    --color-dark: #191A23;
+    --color-lime: #B9FF66;
+    --color-white: #FFFFFF;
+    --color-gray: #F3F3F3;
+    --color-text-muted: #898989;
+
+    /* Шрифт */
+    --font-main: 'Space Grotesk', sans-serif;
+
+    /* Размеры шрифта */
+    --fs-sm: 14px;
+    --fs-base: 16px;
+    --fs-md: 18px;
+    --fs-lg: 24px;
+    --fs-xl: 36px;
+    --fs-2xl: 48px;
+
+    /* Отступы */
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+
+    /* Скругления */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 30px;
+
+    /* Обводка */
+    --border-dark: 1px solid var(--color-dark);
+}
