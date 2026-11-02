@@ -1,0 +1,30 @@
+1. preventDefault() vs stopPropagation()
+preventDefault() отменяет стандартное действие браузера (переход по ссылке, отправка формы). stopPropagation() останавливает всплытие/погружение события. Первый — для контроля поведения, второй — для контроля распространения.
+
+2. Делегирование событий
+Один обработчик на родителе ловит события дочерних элементов через event.target. Преимущества: меньше обработчиков, работает с динамическими элементами (см. handleDelegationClick).
+
+3. Фазы жизненного цикла события
+Capturing (от корня к цели) → Target → Bubbling (от цели к корню). По умолчанию addEventListener работает в фазе bubbling; третий аргумент true включает capturing.
+
+4. event.target vs event.currentTarget
+target — элемент, на котором произошло событие; currentTarget — элемент, на котором висит обработчик. В делегировании currentTarget — родитель, target — конкретный дочерний.
+
+5. Кастомные события
+new CustomEvent('name', { detail: data, bubbles: true }), затем element.dispatchEvent(event). detail — произвольные данные (см. triggerCustomEvent).
+
+6. Debounce vs Throttle
+Debounce — вызов после паузы (например, поиск по вводу). Throttle — вызов не чаще заданного интервала (например, scroll/resize). Оба уменьшают нагрузку.
+
+7. Удаление обработчиков
+removeEventListener(type, handler) — требует ссылки на ту же функцию. Важно для предотвращения утечек памяти (особенно при удалении элементов).
+
+8. Ошибки загрузки ресурсов
+События error (у <img>, <script>, <link>), load, loadstart, loadend. Проверка img.onerror или addEventListener('error', ...).
+
+9. addEventListener vs onclick
+addEventListener позволяет несколько обработчиков на одно событие, поддерживает capturing, не перезаписывает. onclick — только один обработчик (перезаписывается).
+
+10. Оптимизация событий
+Делегирование, throttle/debounce, passive listeners ({ passive: true } для scroll/touch), удаление неиспользуемых обработчиков, requestAnimationFrame для визуальных обновлений.
+
