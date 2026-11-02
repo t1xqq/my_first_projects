@@ -1,0 +1,29 @@
+1. .then().catch() vs async/await
+.then() — цепочки, явные .catch(); async/await — синхронный вид, try/catch для ошибок. async/await читается лучше в длинных цепочках.
+
+2. Promise.all
+Возвращает массив результатов, если все промисы выполнились. Если хотя бы один rejected — весь Promise.all отклоняется с этой ошибкой (остальные не отменяются, просто результат игнорируется).
+
+3. Promise.all / race / allSettled
+all — все (или ошибка); race — первый завершённый (успех или ошибка); allSettled — все, с статусами (fulfilled/rejected).
+
+4. Retry с экспоненциальной задержкой
+Повторять операцию до maxRetries, задержка base * 2^attempt (см. retryWithBackoff). Избегает перегрузки сервера.
+
+5. Race condition
+Результат зависит от порядка выполнения. Решения: блокировки (mutex), отмена устаревших запросов (AbortController), кэширование.
+
+6. Кэширование запросов
+Map по URL (см. createRequestCache). Стратегии: cache-first, network-first, stale-while-revalidate.
+
+7. Оптимизация асинхронных операций
+Параллелить независимые (Promise.all), отменять ненужные (AbortController), debounce/throttle, кэширование, пагинация.
+
+8. Ошибки в цепочках
+Всегда добавлять .catch() в конец цепочки (или try/catch для async), иначе ошибки «проглатываются» (unhandled rejection).
+
+9. Преимущества async/await
+Читаемость, линейный код, try/catch, отладка через обычные точки останова. Минусы — нужно помнить про параллельность (Promise.all).
+
+10. Отладка асинхронного кода
+DevTools: Sources с async стеком, breakpoints, Network для запросов, Performance для таймингов, console.time/timeEnd.
