@@ -1,0 +1,21 @@
+# Ответы на вопросы
+
+1. **Fetch vs XHR.** Fetch — промисы, async/await, Request/Response/Headers, AbortController, streams. XHR — события, громоздкий, но умеет progress загрузки «из коробки». Fetch чище, но не reject-ит на 4xx/5xx и не даёт нативного upload-прогресса.
+
+2. **Ошибки и 404.** Fetch reject-ит только при сетевых сбоях (DNS, нет соединения, CORS, abort). HTTP 404/500 — валидный ответ сервера, поэтому проверяй `if (!response.ok) throw ...`.
+
+3. **Методы.** GET — чтение; POST — создание; PUT — полная замена; PATCH — частичное обновление; DELETE — удаление; HEAD — только заголовки; OPTIONS — preflight CORS.
+
+4. **Заголовки.** Запрос: `headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ...', 'X-Custom': 'v' }`. Ответ: `response.headers.get('Content-Type')`, `forEach`. Полезные: Content-Type, Accept, Authorization, Cache-Control, ETag, Location.
+
+5. **PUT vs PATCH.** PUT заменяет ресурс целиком (непереданные поля теряются), идемпотентен. PATCH меняет только переданные поля. PUT — сохранение формы целиком; PATCH — точечная правка.
+
+6. **Авторизация.** Basic — `Authorization: Basic base64(user:pass)` (только HTTPS). Bearer — `Authorization: Bearer <jwt>` (OAuth2/JWT). OAuth2 — токен получают отдельно, обновляют refresh-token. Неверные данные → 401/403.
+
+7. **Отмена.** `AbortController` + `signal`. `controller.abort()` → ошибка `name === 'AbortError'`. Сценарии: таймауты, уход со страницы, отмена устаревшего запроса в поиске. Отличие от сетевого таймаута: abort — ручная отмена по таймеру.
+
+8. **Форматы.** `json()` → JSON; `text()` → HTML/CSV; `blob()` → файлы/картинки (+ `URL.createObjectURL`); `arrayBuffer()` → бинарь; `FormData` → multipart, файлы. Тело читается **один раз** (stream).
+
+9. **Оптимизация.** `Promise.all` — параллельно независимые; `allSettled` — когда часть может упасть; `race` — таймаут/первый; `for...of await` — последовательно с зависимостями. Кэш: `Map`+TTL, Cache API, HTTP-кэш (`Cache-Control`, `ETag`). Debounce, пагинация, AbortController для устаревших.
+
+10. **Production.** Проверять `response.ok`; таймауты через AbortController; retry с экспоненциальной задержкой+jitter; токены в заголовках, HTTPS; валидировать ответы; централизованная обёртка (interceptors, refresh auth); дедупликация/кэш; offline-очередь (SW); спиннеры и отмена при уходе; streams для больших данных; понимать CORS/preflight; мокать fetch в тестах и покрывать краевые случаи.

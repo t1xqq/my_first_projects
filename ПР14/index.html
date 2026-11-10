@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch API - Работа с HTTP запросами</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header id="main-header">
+      <h1>Практическая работа: Fetch API</h1>
+      <p>Реализуйте функции в файле fetch-tasks.js</p>
+    </header>
+
+    <section id="tasks-section">
+
+      <!-- Задача 1: GET -->
+      <div class="task-area" id="task1">
+        <h3>Задача 1: Базовые GET запросы</h3>
+        <div class="fetch-demo">
+          <button id="fetch-get">Простой GET запрос</button>
+          <button id="fetch-json">GET с JSON данными</button>
+          <button id="fetch-error">Тест ошибки</button>
+          <div id="get-output" class="output">GET результаты:</div>
+          <div id="get-data" class="data-container"></div>
+        </div>
+      </div>
+
+      <!-- Задача 2: CRUD -->
+      <div class="task-area" id="task2">
+        <h3>Задача 2: POST, PUT, PATCH, DELETE</h3>
+        <div class="crud-demo">
+          <button id="fetch-post">POST запрос</button>
+          <button id="fetch-put">PUT запрос</button>
+          <button id="fetch-patch">PATCH запрос</button>
+          <button id="fetch-delete">DELETE запрос</button>
+          <div id="crud-output" class="output">CRUD результаты:</div>
+        </div>
+      </div>
+
+      <!-- Задача 3: Заголовки и параметры -->
+      <div class="task-area" id="task3">
+        <h3>Задача 3: Заголовки и параметры</h3>
+        <div class="headers-demo">
+          <button id="fetch-headers">Кастомные заголовки</button>
+          <button id="fetch-auth">Авторизация</button>
+          <button id="fetch-params">Параметры URL</button>
+          <button id="fetch-timeout">Таймаут запроса</button>
+          <div id="headers-output" class="output">Заголовки и параметры:</div>
+        </div>
+      </div>
+
+      <!-- Задача 4: Обработка ответов -->
+      <div class="task-area" id="task4">
+        <h3>Задача 4: Обработка ответов</h3>
+        <div class="response-demo">
+          <button id="fetch-status">Проверка статуса</button>
+          <button id="fetch-headers-response">Чтение заголовков ответа</button>
+          <button id="fetch-blob">Работа с Blob</button>
+          <button id="fetch-formdata">Отправка FormData</button>
+          <div id="response-output" class="output">Обработка ответов:</div>
+          <div id="response-data" class="data-container"></div>
+        </div>
+      </div>
+
+      <!-- Задача 5: Обработка ошибок -->
+      <div class="task-area" id="task5">
+        <h3>Задача 5: Обработка ошибок</h3>
+        <div class="error-demo">
+          <button id="fetch-network-error">Ошибка сети</button>
+          <button id="fetch-http-error">HTTP ошибки</button>
+          <button id="fetch-abort">Отмена запроса</button>
+          <button id="fetch-retry">Повторные попытки</button>
+          <div id="error-output" class="output">Обработка ошибок:</div>
+        </div>
+      </div>
+
+      <!-- Задача 6: Параллельные запросы -->
+      <div class="task-area" id="task6">
+        <h3>Задача 6: Параллельные запросы</h3>
+        <div class="parallel-demo">
+          <button id="fetch-promise-all">Promise.all</button>
+          <button id="fetch-promise-race">Promise.race</button>
+          <button id="fetch-sequential">Последовательные</button>
+          <div id="parallel-output" class="output">Параллельные запросы:</div>
+          <div id="parallel-data" class="data-container"></div>
+        </div>
+      </div>
+
+      <!-- Задача 7: Реальные сценарии -->
+      <div class="task-area" id="task7">
+        <h3>Задача 7: Реальные сценарии</h3>
+        <div class="real-demo">
+          <button id="fetch-user-posts">Пользователь + посты</button>
+          <button id="fetch-search">Поиск постов</button>
+          <button id="fetch-upload">Загрузка файла</button>
+          <button id="fetch-cache">Кэширование</button>
+          <div id="real-output" class="output">Реальные сценарии:</div>
+          <div id="real-data" class="data-container"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      <p>Fetch API — практическая работа №14</p>
+    </footer>
+  </div>
+
+  <script src="fetch-tasks.js"></script>
+  <script src="fetch-tests.js"></script>
+</body>
+</html>
