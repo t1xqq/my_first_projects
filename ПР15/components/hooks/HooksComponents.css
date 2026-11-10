@@ -1,0 +1,24 @@
+.user-profile { display: flex; flex-direction: column; gap: 0.5rem; max-width: 320px; }
+.user-profile textarea { min-height: 60px; padding: 0.5rem; border: 1px solid #ccc; border-radius: 6px; }
+.form-success { color: #27ae60; font-weight: bold; }
+
+.effect-demo ul { padding-left: 1.25rem; font-family: monospace; color: #7f8c8d; }
+
+.json-view {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+}
+
+.theme-box {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+.theme-light { background: #f8f9fa; color: #2c3e50; border: 1px solid #ddd; }
+.theme-dark  { background: #2c3e50; color: #ecf0f1; border: 1px solid #34495e; }
